@@ -8,16 +8,29 @@
 <script>
   var ctx = document.getElementById("myChart").getContext("2d");
   let timing = new Timing();
-  timing.reverseFunction(100000, 1000);
+  // timing.reverseFunction(100000, 1000);
+
+  // let inputs = [];
+  // let times = [];
+
+  // timing.reverseTimes.forEach((iteration) => {
+  //   inputs.push(iteration.inputSize);
+  // });
+
+  // timing.reverseTimes.forEach((iteration) => {
+  //   times.push(iteration.time);
+  // });
+
+  timing.sortFunction(100000, 1000);
 
   let inputs = [];
   let times = [];
 
-  timing.reverseTimes.forEach((iteration) => {
+  timing.sortTimes.forEach((iteration) => {
     inputs.push(iteration.inputSize);
   });
 
-  timing.reverseTimes.forEach((iteration) => {
+  timing.sortTimes.forEach((iteration) => {
     times.push(iteration.time);
   });
 
