@@ -1,9 +1,10 @@
 class Graph {
   constructor() {
     this.timingSort = new Timing(sort);
+    this.timingReverse = new Timing(reverse);
   }
 
-  renderChart = (data, labels) => {
+  renderChart = (labels, dataSort, dataReverse) => {
     var ctx = document.getElementById("myChart").getContext("2d");
     var myChart = new Chart(ctx, {
       type: "line",
@@ -12,7 +13,11 @@ class Graph {
         datasets: [
           {
             label: "sort()",
-            data: data,
+            data: dataSort,
+          },
+          {
+            label: "reverse()",
+            data: dataReverse,
           },
         ],
       },
@@ -21,17 +26,24 @@ class Graph {
 
   graphData = () => {
     this.timingSort.run(100000, 1000);
-    let labelSort = [];
+    let labels = [];
     let dataSort = [];
 
     this.timingSort.times.forEach((iteration) => {
-      labelSort.push(iteration.inputSize);
+      labels.push(iteration.inputSize);
     });
 
     this.timingSort.times.forEach((iteration) => {
       dataSort.push(iteration.time);
     });
 
-    this.renderChart(dataSort, labelSort);
+    this.timingReverse.run(100000, 1000);
+    let dataReverse = [];
+
+    this.timingReverse.times.forEach((iteration) => {
+      dataReverse.push(iteration.time);
+    });
+
+    this.renderChart(labels, dataSort, dataReverse);
   };
 }
