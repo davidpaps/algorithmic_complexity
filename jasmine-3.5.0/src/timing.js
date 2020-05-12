@@ -6,14 +6,13 @@ class Timing {
   }
 
   reverseFunction = (inputSize, step) => {
-    let array = [...Array(inputSize).keys()];
-    let start = performance.now();
-    array.reverse();
-    let end = performance.now();
-    let time = end - start;
-
-    for (let elements = 0; elements < inputSize; elements++) {
-      if (elements % step === 0) {
+    for (let elements = 0; elements < inputSize; elements += step) {
+      {
+        let array = this._createArray(elements);
+        let start = performance.now();
+        array.reverse();
+        let end = performance.now();
+        let time = end - start;
         this._addTimes(this.reverseTimes, elements, time);
       }
     }
@@ -21,5 +20,13 @@ class Timing {
 
   _addTimes = (array, inputSize, time) => {
     array.push({ inputSize: inputSize, time: time });
+  };
+
+  _createArray = (inputSize) => {
+    return [...Array(inputSize).keys()];
+  };
+
+  _sortArray = (array) => {
+    array.sort(() => Math.random() - 0.5);
   };
 }

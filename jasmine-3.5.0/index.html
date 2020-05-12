@@ -1,0 +1,56 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script src="src/timing.js"></script>
+
+<body>
+  <canvas id="myChart" width="200" height="100"></canvas>
+</body>
+<script>
+  var ctx = document.getElementById("myChart").getContext("2d");
+  let timing = new Timing();
+  timing.reverseFunction(100000, 1000);
+
+  let inputs = [];
+  let times = [];
+
+  timing.reverseTimes.forEach((iteration) => {
+    inputs.push(iteration.inputSize);
+  });
+
+  timing.reverseTimes.forEach((iteration) => {
+    times.push(iteration.time);
+  });
+
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: inputs,
+      datasets: [
+        {
+          label: "Time",
+          data: times,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        xAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: "Elements in Array",
+            },
+          },
+        ],
+        yAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: "Milliseconds",
+            },
+          },
+        ],
+      },
+    },
+  });
+</script>
