@@ -1,6 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <script src="src/timing.js"></script>
+<script src="src/chart.js"></script>
 
 <body>
   <canvas id="myChart" width="200" height="100"></canvas>
@@ -45,126 +46,126 @@
     timesShuffle.push(iteration.time);
   });
 
-  let myChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: inputsSort,
-      datasets: [
-        {
-          label: "sort()",
-          data: timesSort,
-          fill: false,
-          hidden: true,
-          backgroundColor: "#990000",
-          borderColor: "#990000",
-          borderWidth: 2,
-          pointBackgroundColor: "#990000",
-          pointBorderColor: "#000000",
-          pointBorderWidth: 0.5,
-          pointStyle: "rectRounded",
-          pointRadius: 3,
-          pointHitRadius: 4,
-          pointHoverRadius: 5,
-          hoverBackgroundColor: "#990000",
-        },
-        {
-          label: "reverse()",
-          data: timesReverse,
-          fill: false,
-          hidden: true,
-          backgroundColor: "#629632",
-          borderColor: "#629632",
-          borderWidth: 2,
-          pointBackgroundColor: "#629632",
-          pointBorderColor: "#000000",
-          pointBorderWidth: 0.5,
-          pointStyle: "rectRounded",
-          pointRadius: 3,
-          pointHitRadius: 4,
-          pointHoverRadius: 5,
-          hoverBackgroundColor: "#629632",
-        },
-        {
-          label: "last()",
-          data: timesLast,
-          fill: false,
-          hidden: true,
-          backgroundColor: "#3792cb",
-          borderColor: "#3792cb",
-          borderWidth: 2,
-          pointBackgroundColor: "#3792cb",
-          pointBorderColor: "#000000",
-          pointBorderWidth: 0.5,
-          pointStyle: "rectRounded",
-          pointRadius: 3,
-          pointHitRadius: 4,
-          pointHoverRadius: 5,
-          hoverBackgroundColor: "#3792cb",
-        },
-        {
-          label: "shuffle()",
-          data: timesShuffle,
-          fill: false,
-          hidden: true,
-          backgroundColor: "#E5E500",
-          borderColor: "#E5E500",
-          borderWidth: 2,
-          pointBackgroundColor: "#E5E500",
-          pointBorderColor: "#000000",
-          pointBorderWidth: 0.5,
-          pointStyle: "rectRounded",
-          pointRadius: 3,
-          pointHitRadius: 4,
-          pointHoverRadius: 5,
-          hoverBackgroundColor: "#E5E500",
-        },
-      ],
-    },
+  // let myChart = new Chart(ctx, {
+  //   type: "line",
+  //   data: {
+  //     labels: inputsSort,
+  //     datasets: [
+  //       {
+  //         label: "sort()",
+  //         data: timesSort,
+  //         fill: false,
+  //         hidden: true,
+  //         backgroundColor: "#990000",
+  //         borderColor: "#990000",
+  //         borderWidth: 2,
+  //         pointBackgroundColor: "#990000",
+  //         pointBorderColor: "#000000",
+  //         pointBorderWidth: 0.5,
+  //         pointStyle: "rectRounded",
+  //         pointRadius: 3,
+  //         pointHitRadius: 4,
+  //         pointHoverRadius: 5,
+  //         hoverBackgroundColor: "#990000",
+  //       },
+  //       {
+  //         label: "reverse()",
+  //         data: timesReverse,
+  //         fill: false,
+  //         hidden: true,
+  //         backgroundColor: "#629632",
+  //         borderColor: "#629632",
+  //         borderWidth: 2,
+  //         pointBackgroundColor: "#629632",
+  //         pointBorderColor: "#000000",
+  //         pointBorderWidth: 0.5,
+  //         pointStyle: "rectRounded",
+  //         pointRadius: 3,
+  //         pointHitRadius: 4,
+  //         pointHoverRadius: 5,
+  //         hoverBackgroundColor: "#629632",
+  //       },
+  //       {
+  //         label: "last()",
+  //         data: timesLast,
+  //         fill: false,
+  //         hidden: true,
+  //         backgroundColor: "#3792cb",
+  //         borderColor: "#3792cb",
+  //         borderWidth: 2,
+  //         pointBackgroundColor: "#3792cb",
+  //         pointBorderColor: "#000000",
+  //         pointBorderWidth: 0.5,
+  //         pointStyle: "rectRounded",
+  //         pointRadius: 3,
+  //         pointHitRadius: 4,
+  //         pointHoverRadius: 5,
+  //         hoverBackgroundColor: "#3792cb",
+  //       },
+  //       {
+  //         label: "shuffle()",
+  //         data: timesShuffle,
+  //         fill: false,
+  //         hidden: true,
+  //         backgroundColor: "#E5E500",
+  //         borderColor: "#E5E500",
+  //         borderWidth: 2,
+  //         pointBackgroundColor: "#E5E500",
+  //         pointBorderColor: "#000000",
+  //         pointBorderWidth: 0.5,
+  //         pointStyle: "rectRounded",
+  //         pointRadius: 3,
+  //         pointHitRadius: 4,
+  //         pointHoverRadius: 5,
+  //         hoverBackgroundColor: "#E5E500",
+  //       },
+  //     ],
+  //   },
 
-    options: {
-      title: {
-        display: true,
-        text: "Comparison of Algorithm Complexity",
-        fontSize: 20,
-        fontStyle: "bold",
-      },
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              display: false,
-              drawBorder: true,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Number of Elements in Array",
-              fontSize: 16,
-              fontStyle: "bold",
-            },
-          },
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: true,
-              drawBorder: true,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Milliseconds",
-              fontSize: 16,
-              fontStyle: "bold",
-            },
-          },
-        ],
-      },
-      legend: {
-        labels: {
-          fontSize: 16,
-          fontStyle: "bold",
-          usePointStyle: true,
-        },
-      },
-    },
-  });
+  //   options: {
+  //     title: {
+  //       display: true,
+  //       text: "Comparison of Algorithm Complexity",
+  //       fontSize: 20,
+  //       fontStyle: "bold",
+  //     },
+  //     scales: {
+  //       xAxes: [
+  //         {
+  //           gridLines: {
+  //             display: false,
+  //             drawBorder: true,
+  //           },
+  //           scaleLabel: {
+  //             display: true,
+  //             labelString: "Number of Elements in Array",
+  //             fontSize: 16,
+  //             fontStyle: "bold",
+  //           },
+  //         },
+  //       ],
+  //       yAxes: [
+  //         {
+  //           gridLines: {
+  //             display: true,
+  //             drawBorder: true,
+  //           },
+  //           scaleLabel: {
+  //             display: true,
+  //             labelString: "Milliseconds",
+  //             fontSize: 16,
+  //             fontStyle: "bold",
+  //           },
+  //         },
+  //       ],
+  //     },
+  //     legend: {
+  //       labels: {
+  //         fontSize: 16,
+  //         fontStyle: "bold",
+  //         usePointStyle: true,
+  //       },
+  //     },
+  //   },
+  // });
 </script>
