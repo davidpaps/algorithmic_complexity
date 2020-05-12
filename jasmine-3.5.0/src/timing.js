@@ -1,35 +1,24 @@
 "use strict";
 
 class Timing {
-  constructor() {
-    this.reverseTimes = [];
-    this.sortTimes = [];
+  constructor(algorithm) {
+    this.algorithm = algorithm;
+    this.times = [];
   }
 
-  reverseFunction = (inputSize, step) => {
+  time = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createArray(elements);
-        let start = performance.now();
-        array.reverse();
-        let end = performance.now();
-        let time = end - start;
-        this._addTimes(this.reverseTimes, elements, time);
-      }
-    }
-  };
+        if (this.algorithm === sort) {
+          this._shuffleArray(array);
+        }
 
-  sortFunction = (inputSize, step) => {
-    for (let elements = 0; elements < inputSize; elements += step) {
-      {
-        let array = this._createArray(elements);
-        // array.sort(() => Math.random() - 0.5);
-        this._shuffleArray(array);
         let start = performance.now();
-        array.sort();
+        this.algorithm(array);
         let end = performance.now();
         let time = end - start;
-        this._addTimes(this.sortTimes, elements, time);
+        this._addTimes(this.times, elements, time);
       }
     }
   };
@@ -42,10 +31,15 @@ class Timing {
     return [...Array(inputSize).keys()];
   };
 
-  // for (let i = array.length - 1; i > 0; i--) {
-  //   let j = Math.floor(Math.random() * (i + 1));
-
   _shuffleArray = (array) => {
     array.sort(() => Math.random() - 0.5);
   };
 }
+
+const reverse = (array) => {
+  array.reverse();
+};
+
+const sort = (array) => {
+  array.sort();
+};

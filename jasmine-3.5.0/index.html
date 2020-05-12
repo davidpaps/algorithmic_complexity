@@ -7,41 +7,45 @@
 </body>
 <script>
   var ctx = document.getElementById("myChart").getContext("2d");
-  let timing = new Timing();
-  // timing.reverseFunction(100000, 1000);
 
-  // let inputs = [];
-  // let times = [];
+  let timingSort = new Timing(sort);
 
-  // timing.reverseTimes.forEach((iteration) => {
-  //   inputs.push(iteration.inputSize);
-  // });
+  timingSort.time(100000, 1000);
 
-  // timing.reverseTimes.forEach((iteration) => {
-  //   times.push(iteration.time);
-  // });
+  let inputsSort = [];
+  let timesSort = [];
 
-  timing.sortFunction(100000, 1000);
-
-  let inputs = [];
-  let times = [];
-
-  timing.sortTimes.forEach((iteration) => {
-    inputs.push(iteration.inputSize);
+  timingSort.times.forEach((iteration) => {
+    inputsSort.push(iteration.inputSize);
   });
 
-  timing.sortTimes.forEach((iteration) => {
-    times.push(iteration.time);
+  timingSort.times.forEach((iteration) => {
+    timesSort.push(iteration.time);
+  });
+
+  let timingReverse = new Timing(reverse);
+
+  timingReverse.time(100000, 1000);
+
+  let inputsReverse = [];
+  let timesReverse = [];
+
+  timingReverse.times.forEach((iteration) => {
+    inputsReverse.push(iteration.inputSize);
+  });
+
+  timingReverse.times.forEach((iteration) => {
+    timesReverse.push(iteration.time);
   });
 
   var myChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: inputs,
+      labels: inputsSort,
       datasets: [
         {
           label: "Time",
-          data: times,
+          data: timesSort,
         },
       ],
     },
