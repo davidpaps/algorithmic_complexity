@@ -9,9 +9,7 @@
   var ctx = document.getElementById("myChart").getContext("2d");
 
   let timingSort = new Timing(sort);
-
   timingSort.time(100000, 1000);
-
   let inputsSort = [];
   let timesSort = [];
 
@@ -24,31 +22,41 @@
   });
 
   let timingReverse = new Timing(reverse);
-
   timingReverse.time(100000, 1000);
-
-  let inputsReverse = [];
   let timesReverse = [];
-
-  timingReverse.times.forEach((iteration) => {
-    inputsReverse.push(iteration.inputSize);
-  });
 
   timingReverse.times.forEach((iteration) => {
     timesReverse.push(iteration.time);
   });
 
-  var myChart = new Chart(ctx, {
+  let timingLast = new Timing(last);
+  timingLast.time(100000, 1000);
+  let timesLast = [];
+
+  timingLast.times.forEach((iteration) => {
+    timesLast.push(iteration.time);
+  });
+
+  let myChart = new Chart(ctx, {
     type: "line",
     data: {
       labels: inputsSort,
       datasets: [
         {
-          label: "Time",
+          label: "sort()",
           data: timesSort,
+        },
+        {
+          label: "reverse()",
+          data: timesReverse,
+        },
+        {
+          label: "last()",
+          data: timesLast,
         },
       ],
     },
+
     options: {
       scales: {
         xAxes: [

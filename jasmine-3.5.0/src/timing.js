@@ -43,3 +43,7 @@ const reverse = (array) => {
 const sort = (array) => {
   array.sort();
 };
+
+const last = (array) => {
+  array.slice(-1)[0];
+};
