@@ -1,15 +1,15 @@
-// "use strict";
+"use strict";
 
-// describe("Timing", function () {
-//   let timing;
+describe("Timing", function () {
+  let timing;
 
-//   beforeEach(function () {
-//     timing = new Timing();
-//   });
+  beforeEach(function () {
+    timing = new Timing();
+  });
 
-//   describe("", function () {
-//     it("", function () {
-//       expect().toEqual();
-//     });
-//   });
-// });
+  describe("run", function () {
+    it("", function () {
+      expect().toEqual();
+    });
+  });
+});

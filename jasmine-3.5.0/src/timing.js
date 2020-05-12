@@ -6,7 +6,7 @@ class Timing {
     this.times = [];
   }
 
-  time = (inputSize, step) => {
+  run = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createArray(elements);
@@ -34,6 +34,8 @@ class Timing {
   _shuffleArray = (array) => {
     array.sort(() => Math.random() - 0.5);
   };
+
+  _shuffle = () => {};
 }
 
 const reverse = (array) => {

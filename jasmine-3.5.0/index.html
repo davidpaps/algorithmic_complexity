@@ -9,7 +9,7 @@
   var ctx = document.getElementById("myChart").getContext("2d");
 
   let timingSort = new Timing(sort);
-  timingSort.time(100000, 1000);
+  timingSort.run(100000, 1000);
   let inputsSort = [];
   let timesSort = [];
 
@@ -22,7 +22,7 @@
   });
 
   let timingReverse = new Timing(reverse);
-  timingReverse.time(100000, 1000);
+  timingReverse.run(100000, 1000);
   let timesReverse = [];
 
   timingReverse.times.forEach((iteration) => {
@@ -30,7 +30,7 @@
   });
 
   let timingLast = new Timing(last);
-  timingLast.time(100000, 1000);
+  timingLast.run(100000, 1000);
   let timesLast = [];
 
   timingLast.times.forEach((iteration) => {
@@ -51,7 +51,7 @@
           borderColor: "#fbaa5b",
           borderWidth: 2,
           pointBackgroundColor: "#fbaa5b",
-          pointBorderColor: "#FFFFFF",
+          pointBorderColor: "#000000",
           pointBorderWidth: 0.5,
           pointStyle: "rectRounded",
           pointRadius: 3,
@@ -68,7 +68,7 @@
           borderColor: "#a4e26e",
           borderWidth: 2,
           pointBackgroundColor: "#a4e26e",
-          pointBorderColor: "#FFFFFF",
+          pointBorderColor: "#000000",
           pointBorderWidth: 0.5,
           pointStyle: "rectRounded",
           pointRadius: 3,
@@ -85,7 +85,7 @@
           borderColor: "#6e99aa",
           borderWidth: 2,
           pointBackgroundColor: "#6e99aa",
-          pointBorderColor: "#FFFFFF",
+          pointBorderColor: "#000000",
           pointBorderWidth: 0.5,
           pointStyle: "rectRounded",
           pointRadius: 3,
@@ -100,20 +100,57 @@
       scales: {
         xAxes: [
           {
+            ticks: {
+              display: true,
+              major: {
+                fontStyle: "bold",
+                fontColor: "#000000",
+              },
+            },
+            gridLines: {
+              display: false,
+              drawBorder: true,
+            },
             scaleLabel: {
               display: true,
               labelString: "Elements in Array",
+              fontStyle: "bold",
+              fontColor: "#000000",
             },
           },
         ],
         yAxes: [
           {
+            ticks: {
+              display: true,
+              major: {
+                fontStyle: "bold",
+                fontColor: "#000000",
+              },
+            },
+            gridLines: {
+              display: true,
+              drawBorder: true,
+            },
             scaleLabel: {
               display: true,
               labelString: "Milliseconds",
+              fontStyle: "bold",
+              fontColor: "#000000",
             },
           },
         ],
+      },
+      legend: {
+        display: true,
+        position: "top",
+        align: "center",
+        labels: {
+          fontSize: 12,
+          fontStyle: "bold",
+          fontColor: "#000000",
+          usePointStyle: true,
+        },
       },
     },
   });
