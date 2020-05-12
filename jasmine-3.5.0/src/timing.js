@@ -34,8 +34,6 @@ class Timing {
   _shuffleArray = (array) => {
     array.sort(() => Math.random() - 0.5);
   };
-
-  _shuffle = () => {};
 }
 
 const reverse = (array) => {
@@ -48,4 +46,8 @@ const sort = (array) => {
 
 const last = (array) => {
   array.slice(-1)[0];
+};
+
+const shuffle = (array) => {
+  array.sort(() => Math.random() - 0.5);
 };

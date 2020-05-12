@@ -37,6 +37,14 @@
     timesLast.push(iteration.time);
   });
 
+  let timingShuffle = new Timing(shuffle);
+  timingShuffle.run(100000, 1000);
+  let timesShuffle = [];
+
+  timingShuffle.times.forEach((iteration) => {
+    timesShuffle.push(iteration.time);
+  });
+
   let myChart = new Chart(ctx, {
     type: "line",
     data: {
@@ -79,6 +87,23 @@
         {
           label: "last()",
           data: timesLast,
+          fill: false,
+          hidden: true,
+          backgroundColor: "#6e99aa",
+          borderColor: "#6e99aa",
+          borderWidth: 2,
+          pointBackgroundColor: "#6e99aa",
+          pointBorderColor: "#000000",
+          pointBorderWidth: 0.5,
+          pointStyle: "rectRounded",
+          pointRadius: 3,
+          pointHitRadius: 4,
+          pointHoverRadius: 5,
+          hoverBackgroundColor: "#6e99aa",
+        },
+        {
+          label: "shuffle()",
+          data: timesShuffle,
           fill: false,
           hidden: true,
           backgroundColor: "#6e99aa",
