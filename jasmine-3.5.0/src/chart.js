@@ -4,6 +4,7 @@ class Graph {
   constructor() {
     this.timingSort = new Timing(sort);
     this.timingReverse = new Timing(reverse);
+    this.timingLast = new Timing(last);
     this.data = [];
     this.labels = [];
   }
@@ -48,6 +49,23 @@ class Graph {
             pointHitRadius: 4,
             pointHoverRadius: 5,
             hoverBackgroundColor: "#629632",
+          },
+          {
+            label: "last()",
+            data: data[2],
+            fill: false,
+            hidden: true,
+            backgroundColor: "#3792cb",
+            borderColor: "#3792cb",
+            borderWidth: 2,
+            pointBackgroundColor: "#3792cb",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#3792cb",
           },
         ],
       },
@@ -103,6 +121,7 @@ class Graph {
     this.generateLabels(inputSize, step);
     this.sortData(inputSize, step);
     this.reverseData(inputSize, step);
+    this.lastData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -130,5 +149,14 @@ class Graph {
       reverseData.push(iteration.time);
     });
     this.data.push(reverseData);
+  };
+
+  lastData = (inputSize, step) => {
+    this.timingLast.run(inputSize, step);
+    let lastData = [];
+    this.timingLast.times.forEach((iteration) => {
+      lastData.push(iteration.time);
+    });
+    this.data.push(lastData);
   };
 }
