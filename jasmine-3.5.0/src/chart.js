@@ -5,6 +5,7 @@ class Graph {
     this.timingSort = new Timing(sort);
     this.timingReverse = new Timing(reverse);
     this.timingLast = new Timing(last);
+    this.timingShuffle = new Timing(shuffle);
     this.data = [];
     this.labels = [];
   }
@@ -67,6 +68,23 @@ class Graph {
             pointHoverRadius: 5,
             hoverBackgroundColor: "#3792cb",
           },
+          {
+            label: "shuffle()",
+            data: data[3],
+            fill: false,
+            hidden: true,
+            backgroundColor: "#E5E500",
+            borderColor: "#E5E500",
+            borderWidth: 2,
+            pointBackgroundColor: "#E5E500",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#E5E500",
+          },
         ],
       },
       options: {
@@ -122,6 +140,7 @@ class Graph {
     this.sortData(inputSize, step);
     this.reverseData(inputSize, step);
     this.lastData(inputSize, step);
+    this.shuffleData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -158,5 +177,14 @@ class Graph {
       lastData.push(iteration.time);
     });
     this.data.push(lastData);
+  };
+
+  shuffleData = (inputSize, step) => {
+    this.timingShuffle.run(inputSize, step);
+    let shuffleData = [];
+    this.timingShuffle.times.forEach((iteration) => {
+      shuffleData.push(iteration.time);
+    });
+    this.data.push(shuffleData);
   };
 }
