@@ -12,7 +12,7 @@ To run the Jasmine test suite, right click on the `SpecRunner.html` file and sel
 
 ---
 
-# Chapter 1 Timing Code
+## Chapter 1 Timing Code
 
 To start, let's look at how fast some standard library functions run. Here are four different ones you could be looking at:
 
@@ -63,3 +63,56 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
 ---
 
 # Chapter 2: Building Your Own Algorithms
+
+Now, let's look at efficiency for our own algorithms.
+
+### The Challenges:
+
+For each algorithm you write, you should:
+
+- Write a few tests (covering different cases)
+- Implement them
+- Run your timing framework
+- Plot their curves
+
+Here is a list of algorithms for you to implement:
+
+#### Shuffling
+
+Implement your own algorithm for shuffling (you cannot use `.shuffle`).
+
+#### Reversing
+
+Implement your own algorithm for reversing an array (you cannot use `.reverse`).
+
+#### Find Duplicates
+
+Given a list of words, find all words that appear more than once.
+
+#### Most frequent words
+
+Given a list of words, find which are the two most common words.
+
+#### Sorting 0s and 1s
+
+Given an array containing only 0s and 1s, sort it.
+
+#### Sorting
+
+Implement your own algorithm for sorting an array (you cannot use `.sort`).
+
+#### Fibonacci
+
+Create a function that takes a number N and returns an array of the first N numbers in the [fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html).
+
+For example:
+
+| N    | expected return                     |
+| ---- | ----------------------------------- |
+| `0`  | `[]`                                |
+| `3`  | `[0, 1, 1]`                         |
+| `10` | `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]` |
+
+**To see the results from my code:**
+
+---
