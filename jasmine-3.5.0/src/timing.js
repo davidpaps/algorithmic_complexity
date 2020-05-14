@@ -56,3 +56,7 @@ const shuffle = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
+
+const myShuffle = (array) => {
+  array.sort(() => Math.random() - 0.5);
+};

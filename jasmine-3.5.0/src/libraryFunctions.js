@@ -1,25 +1,27 @@
 "use strict";
 
-class Reverse {
+class LibraryFunctions {
   constructor() {
+    this.timingSort = new Timing(sort);
     this.timingReverse = new Timing(reverse);
-    // this.timingMyReverse = new Timing(myReverse);
+    this.timingLast = new Timing(last);
+    this.timingShuffle = new Timing(shuffle);
     this.data = [];
     this.labels = [];
   }
 
   generateChart = (labels, data) => {
-    let ctx = document.getElementById("reverse").getContext("2d");
+    let ctx = document.getElementById("myChart").getContext("2d");
     let myChart = new Chart(ctx, {
       type: "line",
       data: {
         labels: labels,
         datasets: [
           {
-            label: "JS reverse()",
+            label: "sort()",
             data: data[0],
             fill: false,
-            hidden: false,
+            hidden: true,
             backgroundColor: "#990000",
             borderColor: "#990000",
             borderWidth: 2,
@@ -33,10 +35,10 @@ class Reverse {
             hoverBackgroundColor: "#990000",
           },
           {
-            label: "My reverse()",
+            label: "reverse()",
             data: data[1],
             fill: false,
-            hidden: false,
+            hidden: true,
             backgroundColor: "#629632",
             borderColor: "#629632",
             borderWidth: 2,
@@ -49,12 +51,46 @@ class Reverse {
             pointHoverRadius: 5,
             hoverBackgroundColor: "#629632",
           },
+          {
+            label: "last()",
+            data: data[2],
+            fill: false,
+            hidden: true,
+            backgroundColor: "#3792cb",
+            borderColor: "#3792cb",
+            borderWidth: 2,
+            pointBackgroundColor: "#3792cb",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#3792cb",
+          },
+          {
+            label: "shuffle()",
+            data: data[3],
+            fill: false,
+            hidden: true,
+            backgroundColor: "#E5E500",
+            borderColor: "#E5E500",
+            borderWidth: 2,
+            pointBackgroundColor: "#E5E500",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#E5E500",
+          },
         ],
       },
       options: {
         title: {
           display: true,
-          text: "Comparison of Reverse Functions",
+          text: "Comparison of Algorithm Complexity",
           fontSize: 20,
           fontStyle: "bold",
         },
@@ -101,17 +137,28 @@ class Reverse {
 
   renderChart = (inputSize, step) => {
     this.generateLabels(inputSize, step);
+    this.sortData(inputSize, step);
     this.reverseData(inputSize, step);
-    this.myReverseData(inputSize, step);
+    this.lastData(inputSize, step);
+    this.shuffleData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingReverse.run(inputSize, step);
+    this.timingSort.run(inputSize, step);
 
-    this.timingReverse.times.forEach((iteration) => {
+    this.timingSort.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
     });
+  };
+
+  sortData = (inputSize, step) => {
+    this.timingSort.run(inputSize, step);
+    let sortData = [];
+    this.timingSort.times.forEach((iteration) => {
+      sortData.push(iteration.time);
+    });
+    this.data.push(sortData);
   };
 
   reverseData = (inputSize, step) => {
@@ -123,12 +170,21 @@ class Reverse {
     this.data.push(reverseData);
   };
 
-  myReverseData = (inputSize, step) => {
-    // this.timingMyReverse.run(inputSize, step);
-    // let myReverseData = [];
-    // this.timingMyReverse.times.forEach((iteration) => {
-    //   myReverseData.push(iteration.time);
-    // });
-    // this.data.push(myReverseData);
+  lastData = (inputSize, step) => {
+    this.timingLast.run(inputSize, step);
+    let lastData = [];
+    this.timingLast.times.forEach((iteration) => {
+      lastData.push(iteration.time);
+    });
+    this.data.push(lastData);
+  };
+
+  shuffleData = (inputSize, step) => {
+    this.timingShuffle.run(inputSize, step);
+    let shuffleData = [];
+    this.timingShuffle.times.forEach((iteration) => {
+      shuffleData.push(iteration.time);
+    });
+    this.data.push(shuffleData);
   };
 }

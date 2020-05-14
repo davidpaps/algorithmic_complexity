@@ -3,6 +3,7 @@
 class Shuffle {
   constructor() {
     this.timingShuffle = new Timing(shuffle);
+    this.timingMyShuffle = new Timing(myShuffle);
     this.data = [];
     this.labels = [];
   }
@@ -18,7 +19,7 @@ class Shuffle {
             label: "JS shuffle()",
             data: data[0],
             fill: false,
-            hidden: true,
+            hidden: false,
             backgroundColor: "#990000",
             borderColor: "#990000",
             borderWidth: 2,
@@ -35,7 +36,7 @@ class Shuffle {
             label: "My shuffle()",
             data: data[1],
             fill: false,
-            hidden: true,
+            hidden: false,
             backgroundColor: "#629632",
             borderColor: "#629632",
             borderWidth: 2,
@@ -123,9 +124,9 @@ class Shuffle {
   };
 
   myShuffleData = (inputSize, step) => {
-    this.timingShuffle.run(inputSize, step);
+    this.timingMyShuffle.run(inputSize, step);
     let myShuffleData = [];
-    this.timingShuffle.times.forEach((iteration) => {
+    this.timingMyShuffle.times.forEach((iteration) => {
       myShuffleData.push(iteration.time);
     });
     this.data.push(myShuffleData);
