@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Algorithm Complexity Chapter 1</title>
+    <title>Algorithm Complexity</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="src/timing.js"></script>
     <script src="src/chart.js"></script>
     <script src="src/reverse.js"></script>
+    <script src="src/shuffle.js"></script>
   </head>
 
   <body>
     <canvas id="reverse" width="200" height="100"></canvas>
+    <canvas id="shuffle" width="200" height="100"></canvas>
     <canvas id="myChart" width="200" height="100"></canvas>
   </body>
 
   <script>
-    let graphClass = new Graph();
-    graphClass.renderChart(100000, 1000);
+    let graph = new Graph();
+    graph.renderChart(100000, 1000);
 
-    let reverseClass = new Reverse();
-    reverseClass.renderChart(100000, 1000);
+    let reverseFunction = new Reverse();
+    reverseFunction.renderChart(100000, 1000);
+
+    let shuffleFunction = new Shuffle();
+    shuffleFunction.renderChart(100000, 1000);
   </script>
 </html>
