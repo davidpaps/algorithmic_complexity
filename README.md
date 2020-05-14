@@ -85,34 +85,6 @@ Implement your own algorithm for shuffling (you cannot use `.shuffle`).
 
 Implement your own algorithm for reversing an array (you cannot use `.reverse`).
 
-#### Find Duplicates
-
-Given a list of words, find all words that appear more than once.
-
-#### Most frequent words
-
-Given a list of words, find which are the two most common words.
-
-#### Sorting 0s and 1s
-
-Given an array containing only 0s and 1s, sort it.
-
-#### Sorting
-
-Implement your own algorithm for sorting an array (you cannot use `.sort`).
-
-#### Fibonacci
-
-Create a function that takes a number N and returns an array of the first N numbers in the [fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html).
-
-For example:
-
-| N    | expected return                     |
-| ---- | ----------------------------------- |
-| `0`  | `[]`                                |
-| `3`  | `[0, 1, 1]`                         |
-| `10` | `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]` |
-
 **To see the results from my code:**
 
 ---

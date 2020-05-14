@@ -9,14 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="src/timing.js"></script>
     <script src="src/chart.js"></script>
+    <script src="src/reverse.js"></script>
   </head>
 
   <body>
+    <canvas id="reverse" width="200" height="100"></canvas>
     <canvas id="myChart" width="200" height="100"></canvas>
   </body>
 
   <script>
-    let graph = new Graph();
-    graph.renderChart(100000, 1000);
+    let graphClass = new Graph();
+    graphClass.renderChart(100000, 1000);
+
+    let reverseClass = new Reverse();
+    reverseClass.renderChart(100000, 1000);
   </script>
 </html>
