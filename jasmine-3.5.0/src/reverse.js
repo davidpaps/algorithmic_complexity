@@ -3,7 +3,7 @@
 class Reverse {
   constructor() {
     this.timingReverse = new Timing(reverse);
-    // this.timingMyReverse = new Timing(myReverse);
+    this.timingMyReverse = new Timing(myReverse);
     this.data = [];
     this.labels = [];
   }
@@ -124,11 +124,11 @@ class Reverse {
   };
 
   myReverseData = (inputSize, step) => {
-    // this.timingMyReverse.run(inputSize, step);
-    // let myReverseData = [];
-    // this.timingMyReverse.times.forEach((iteration) => {
-    //   myReverseData.push(iteration.time);
-    // });
-    // this.data.push(myReverseData);
+    this.timingMyReverse.run(inputSize, step);
+    let myReverseData = [];
+    this.timingMyReverse.times.forEach((iteration) => {
+      myReverseData.push(iteration.time);
+    });
+    this.data.push(myReverseData);
   };
 }

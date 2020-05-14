@@ -60,3 +60,11 @@ const shuffle = (array) => {
 const myShuffle = (array) => {
   array.sort(() => Math.random() - 0.5);
 };
+
+const myReverse = (array) => {
+  let reversedArray = [];
+  for (let element = array.length - 1; element >= 0; element--) {
+    reversedArray.push(array[element]);
+  }
+  return reversedArray;
+};
