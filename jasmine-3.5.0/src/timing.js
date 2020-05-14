@@ -25,7 +25,14 @@ class Timing {
   };
 
   _createArray = (inputSize) => {
-    return [...Array(inputSize).keys()];
+    let array = [...Array(inputSize).keys()];
+    let dupArray = [...Array(inputSize).keys()];
+    if (this.algorithm === duplicate) {
+      for (let i = 0; i < dupArray.length; i++) {
+        array.push(dupArray[i]);
+      }
+    }
+    return array;
   };
 
   _shuffleArray = (array) => {
@@ -68,3 +75,21 @@ const myReverse = (array) => {
   }
   return reversedArray;
 };
+
+const duplicate = (array) => {
+  return array;
+};
+
+// if (this.algorithm === duplicate) {
+//   // let dupArray = [...Array(inputSize).keys()];
+//   for (let element = 0; (element = dupArray.length); element++) {
+//     array.push(dupArray[element]);
+//   }
+// }
+
+// const duplicate = (array) => {
+//   let duplicateArray = array.filter(
+//     (element, index, array) => array.indexOf(element) !== index
+//   );
+//   return duplicateArray;
+// };
