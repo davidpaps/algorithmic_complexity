@@ -11,7 +11,7 @@ class LibraryFunctions {
   }
 
   generateChart = (labels, data) => {
-    let ctx = document.getElementById("myChart").getContext("2d");
+    let ctx = document.getElementById("library").getContext("2d");
     let myChart = new Chart(ctx, {
       type: "line",
       data: {

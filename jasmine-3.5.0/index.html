@@ -8,7 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="src/timing.js"></script>
-    <script src="src/chart.js"></script>
+    <script src="src/libraryFunctions.js"></script>
     <script src="src/reverse.js"></script>
     <script src="src/shuffle.js"></script>
   </head>
@@ -16,12 +16,12 @@
   <body>
     <canvas id="reverse" width="200" height="100"></canvas>
     <canvas id="shuffle" width="200" height="100"></canvas>
-    <canvas id="myChart" width="200" height="100"></canvas>
+    <canvas id="library" width="200" height="100"></canvas>
   </body>
 
   <script>
-    let graph = new Graph();
-    graph.renderChart(100000, 1000);
+    let libraryFunctions = new LibraryFunctions();
+    libraryFunctions.renderChart(100000, 1000);
 
     let reverseFunction = new Reverse();
     reverseFunction.renderChart(100000, 1000);
