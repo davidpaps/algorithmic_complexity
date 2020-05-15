@@ -48,30 +48,10 @@ class Timing {
   };
 }
 
-const duplicate = (array) => {
-  return [...new Set(array)];
-};
-
 const sort = (array) => {
   array.sort();
 };
 
 const last = (array) => {
   array.slice(-1)[0];
-};
-
-const myDuplicate = (array) => {
-  let counter = {};
-  let duplicates = [];
-  array.forEach((element) => {
-    if (counter[element] === undefined) {
-      counter[element] = 1;
-    } else {
-      counter[element] += 1;
-      if (counter[element] === 2) {
-        duplicates.push(element);
-      }
-    }
-  });
-  return duplicates;
 };

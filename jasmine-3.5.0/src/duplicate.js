@@ -132,3 +132,23 @@ class Duplicate {
     this.data.push(duplicateMyData);
   };
 }
+
+const duplicate = (array) => {
+  return [...new Set(array)];
+};
+
+const myDuplicate = (array) => {
+  let counter = {};
+  let duplicates = [];
+  array.forEach((element) => {
+    if (counter[element] === undefined) {
+      counter[element] = 1;
+    } else {
+      counter[element] += 1;
+      if (counter[element] === 2) {
+        duplicates.push(element);
+      }
+    }
+  });
+  return duplicates;
+};
