@@ -20,17 +20,17 @@ class Sort {
             data: data[0],
             fill: false,
             hidden: false,
-            backgroundColor: "#990000",
-            borderColor: "#990000",
+            backgroundColor: "#3792cb",
+            borderColor: "#3792cb",
             borderWidth: 2,
-            pointBackgroundColor: "#990000",
+            pointBackgroundColor: "#3792cb",
             pointBorderColor: "#000000",
             pointBorderWidth: 0.5,
             pointStyle: "rectRounded",
             pointRadius: 3,
             pointHitRadius: 4,
             pointHoverRadius: 5,
-            hoverBackgroundColor: "#990000",
+            hoverBackgroundColor: "#3792cb",
           },
           // {
           //   label: "My sort()",
@@ -136,3 +136,15 @@ class Sort {
 const sort = (array) => {
   array.sort();
 };
+
+// const mySort = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (array[i] > array[j]) {
+//         let swap = array[i];
+//         array[i] = array[j];
+//         array[j] = swap;
+//       }
+//     }
+//   }
+// };
