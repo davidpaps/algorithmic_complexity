@@ -26,8 +26,7 @@ class Timing {
   };
 
   _shuffleArray = (array) => {
-    if (this.algorithm === sort) {
-      // || this.algorithm === mySort)
+    if (this.algorithm === sort || this.algorithm === mySort) {
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -36,8 +35,8 @@ class Timing {
   };
 
   _duplicateArray = (array) => {
-    let dupArray = [...Array(array.length).keys()];
     if (this.algorithm === duplicate || this.algorithm === myDuplicate) {
+      let dupArray = [...Array(array.length).keys()];
       for (let i = 0; i < dupArray.length; i++) {
         array.push(dupArray[i]);
       }

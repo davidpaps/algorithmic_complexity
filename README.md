@@ -36,7 +36,7 @@ Sort(sort the elements in an array)
 
 **To see the results from my code:**
 
-Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph showing the 4 functions detailed above. The legend's can be clicked to add or remove a function from the graph:
+Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph titled `Comparison of Algorithmic Complexity` showing the 4 functions detailed above. The legend's can be clicked to add or remove a function from the graph:
 
 <table>
   <tr>
@@ -94,5 +94,7 @@ Implement your own algorithm for returning the last element of an aray (you cann
 Implement your own algorithm for sorting an array (you cannot use `.sort`).
 
 **To see the results from my code:**
+
+Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph showing a graph for each of the functions detailed above. The legend's can be clicked to add or remove a function from the graph:
 
 ---

@@ -3,7 +3,7 @@
 class Sort {
   constructor() {
     this.timingSort = new Timing(sort);
-    // this.timingMySort = new Timing(mySort);
+    this.timingMySort = new Timing(mySort);
     this.data = [];
     this.labels = [];
   }
@@ -32,23 +32,23 @@ class Sort {
             pointHoverRadius: 5,
             hoverBackgroundColor: "#3792cb",
           },
-          // {
-          //   label: "My sort()",
-          //   data: data[1],
-          //   fill: false,
-          //   hidden: false,
-          //   backgroundColor: "#629632",
-          //   borderColor: "#629632",
-          //   borderWidth: 2,
-          //   pointBackgroundColor: "#629632",
-          //   pointBorderColor: "#000000",
-          //   pointBorderWidth: 0.5,
-          //   pointStyle: "rectRounded",
-          //   pointRadius: 3,
-          //   pointHitRadius: 4,
-          //   pointHoverRadius: 5,
-          //   hoverBackgroundColor: "#629632",
-          // },
+          {
+            label: "My sort()",
+            data: data[1],
+            fill: false,
+            hidden: false,
+            backgroundColor: "#629632",
+            borderColor: "#629632",
+            borderWidth: 2,
+            pointBackgroundColor: "#629632",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#629632",
+          },
         ],
       },
       options: {
@@ -102,7 +102,7 @@ class Sort {
   renderChart = (inputSize, step) => {
     this.generateLabels(inputSize, step);
     this.sortData(inputSize, step);
-    // this.mySortData(inputSize, step);
+    this.mySortData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -123,28 +123,29 @@ class Sort {
     this.data.push(sortData);
   };
 
-  // mySortData = (inputSize, step) => {
-  //   this.timingMySort.run(inputSize, step);
-  //   let mySortData = [];
-  //   this.timingMySort.times.forEach((iteration) => {
-  //     mySortData.push(iteration.time);
-  //   });
-  //   this.data.push(mySortData);
-  // };
+  mySortData = (inputSize, step) => {
+    this.timingMySort.run(inputSize, step);
+    let mySortData = [];
+    this.timingMySort.times.forEach((iteration) => {
+      mySortData.push(iteration.time);
+    });
+    this.data.push(mySortData);
+  };
 }
 
 const sort = (array) => {
   array.sort();
 };
 
-// const mySort = (array) => {
-//   for (let i = 0; i < array.length; i++) {
-//     for (let j = i + 1; j < array.length; j++) {
-//       if (array[i] > array[j]) {
-//         let swap = array[i];
-//         array[i] = array[j];
-//         array[j] = swap;
-//       }
-//     }
-//   }
-// };
+const mySort = (array) => {
+  //   for (let i = 0; i < array.length; i++) {
+  //     for (let j = i + 1; j < array.length; j++) {
+  //       if (array[i] > array[j]) {
+  //         let swap = array[i];
+  //         array[i] = array[j];
+  //         array[j] = swap;
+  //       }
+  //     }
+  //   }
+  return array;
+};
