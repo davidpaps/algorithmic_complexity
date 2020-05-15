@@ -1,6 +1,6 @@
 # Algorithmic Complexity
 
-Makers Wokshop - How programs interact with memory, and how to use that to make programmes faster.
+Makers Wokshop - How programs interact with memory, and how to use that to make programmes faster. My workings are writtin in Javascript, but this can be completed in any language.
 
 ---
 
@@ -38,27 +38,7 @@ Sort(sort the elements in an array)
 
 Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph titled `Comparison of Algorithmic Complexity` showing the 4 functions detailed above. The legend's can be clicked to add or remove a function from the graph:
 
-<table>
-  <tr>
-     <td>shuffle()</td>
-      <td>reverse()</td>
-  </tr>
-  <tr>
-    <td valign="top"><img src='./public/images/shuffle.png' width="5000"/></td>
-    <td valign="top"><img src='./public/images/reverse.png' width="5000"/></td>
-  </tr>
- </table>
-
- <table>
-  <tr>
-     <td>sort()</td>
-      <td>last()</td>
-  </tr>
-  <tr>
-    <td valign="top"><img src='./public/images/sort.png' width="5000"/></td>
-    <td valign="top"><img src='./public/images/last.png' width="5000"/></td>
-  </tr>
- </table>
+<img src='./public/images/four.png' />
 
 ---
 
@@ -77,24 +57,50 @@ For each algorithm you write, you should:
 
 Here is a list of algorithms for you to implement:
 
-#### Shuffling
+#### Shuffle
 
 Implement your own algorithm for shuffling (you cannot use `.shuffle`).
 
-#### Reversing
+#### Reverse
 
 Implement your own algorithm for reversing an array (you cannot use `.reverse`).
+
+#### Find Duplicates
+
+Implement your own algorithm for all elements that appear more than once in an array (you cannot use `.unique`).
 
 #### Last
 
 Implement your own algorithm for returning the last element of an aray (you cannot use `.last`).
 
-#### Sorting
+#### Sort
 
 Implement your own algorithm for sorting an array (you cannot use `.sort`).
 
 **To see the results from my code:**
 
-Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph showing a graph for each of the functions detailed above. The legend's can be clicked to add or remove a function from the graph:
+Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph for each of the functions detailed above. The legend's can be clicked to add or remove a function from the graph:
+
+<table>
+  <tr>
+     <td>shuffle()</td>
+      <td>reverse()</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./public/images/shuffle_comparison.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/reverse_comparison.png' width="5000"/></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+     <td>duplicate()</td>
+      <td>last()</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./public/images/duplicate_comparison.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/last_comparison.png' width="5000"/></td>
+  </tr>
+ </table>
 
 ---
