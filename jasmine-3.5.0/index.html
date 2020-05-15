@@ -12,9 +12,11 @@
     <script src="src/reverse.js"></script>
     <script src="src/shuffle.js"></script>
     <script src="src/duplicate.js"></script>
+    <script src="src/last.js"></script>
   </head>
 
   <body>
+    <canvas id="last" width="200" height="100"></canvas>
     <canvas id="duplicate" width="200" height="100"></canvas>
     <canvas id="reverse" width="200" height="100"></canvas>
     <canvas id="shuffle" width="200" height="100"></canvas>
@@ -33,5 +35,8 @@
 
     let duplicateFunction = new Duplicate();
     duplicateFunction.renderChart(100000, 1000);
+
+    let lastFunction = new Last();
+    lastFunction.renderChart(100000, 1000);
   </script>
 </html>
