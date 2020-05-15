@@ -26,9 +26,7 @@ class Timing {
   };
 
   _createArray = (inputSize) => {
-    let array = [...Array(inputSize).keys()];
-
-    return array;
+    return [...Array(inputSize).keys()];
   };
 
   _shuffleArray = (array) => {
@@ -42,7 +40,7 @@ class Timing {
 
   _duplicateArray = (array) => {
     let dupArray = [...Array(array.length).keys()];
-    if (this.algorithm === duplicate) {
+    if (this.algorithm === duplicate || this.algorithm === myDuplicate) {
       for (let i = 0; i < dupArray.length; i++) {
         array.push(dupArray[i]);
       }
@@ -82,6 +80,10 @@ const myReverse = (array) => {
 };
 
 const duplicate = (array) => {
+  return [...new Set(array)];
+};
+
+const myDuplicate = (array) => {
   let counter = {};
   let duplicates = [];
   array.forEach((element) => {
@@ -95,11 +97,4 @@ const duplicate = (array) => {
     }
   });
   return duplicates;
-};
-
-const myDuplicate = (array) => {
-  // let duplicateArray = array.filter(
-  //   (element, index, array) => array.indexOf(element) !== index
-  // );
-  // return duplicateArray;
 };

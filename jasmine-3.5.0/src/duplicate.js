@@ -3,6 +3,7 @@
 class Duplicate {
   constructor() {
     this.timingDuplicate = new Timing(duplicate);
+    this.timingMyDuplicate = new Timing(myDuplicate);
     this.data = [];
     this.labels = [];
   }
@@ -31,23 +32,23 @@ class Duplicate {
             pointHoverRadius: 5,
             hoverBackgroundColor: "#990000",
           },
-          // {
-          //   label: "My duplicate()",
-          //   data: data[1],
-          //   fill: false,
-          //   hidden: false,
-          //   backgroundColor: "#629632",
-          //   borderColor: "#629632",
-          //   borderWidth: 2,
-          //   pointBackgroundColor: "#629632",
-          //   pointBorderColor: "#000000",
-          //   pointBorderWidth: 0.5,
-          //   pointStyle: "rectRounded",
-          //   pointRadius: 3,
-          //   pointHitRadius: 4,
-          //   pointHoverRadius: 5,
-          //   hoverBackgroundColor: "#629632",
-          // },
+          {
+            label: "My duplicate()",
+            data: data[1],
+            fill: false,
+            hidden: false,
+            backgroundColor: "#629632",
+            borderColor: "#629632",
+            borderWidth: 2,
+            pointBackgroundColor: "#629632",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#629632",
+          },
         ],
       },
       options: {
@@ -101,6 +102,7 @@ class Duplicate {
   renderChart = (inputSize, step) => {
     this.generateLabels(inputSize, step);
     this.duplicateData(inputSize, step);
+    this.duplicateMyData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -119,5 +121,14 @@ class Duplicate {
       duplicateData.push(iteration.time);
     });
     this.data.push(duplicateData);
+  };
+
+  duplicateMyData = (inputSize, step) => {
+    this.timingMyDuplicate.run(inputSize, step);
+    let duplicateMyData = [];
+    this.timingMyDuplicate.times.forEach((iteration) => {
+      duplicateMyData.push(iteration.time);
+    });
+    this.data.push(duplicateMyData);
   };
 }
