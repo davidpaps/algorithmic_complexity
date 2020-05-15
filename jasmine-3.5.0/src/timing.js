@@ -27,6 +27,7 @@ class Timing {
 
   _shuffleArray = (array) => {
     if (this.algorithm === sort) {
+      // || this.algorithm === mySort)
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -47,7 +48,3 @@ class Timing {
     array.push({ inputSize: inputSize, time: time });
   };
 }
-
-const sort = (array) => {
-  array.sort();
-};

@@ -85,6 +85,14 @@ Implement your own algorithm for shuffling (you cannot use `.shuffle`).
 
 Implement your own algorithm for reversing an array (you cannot use `.reverse`).
 
+#### Last
+
+Implement your own algorithm for returning the last element of an aray (you cannot use `.last`).
+
+#### Sorting
+
+Implement your own algorithm for sorting an array (you cannot use `.sort`).
+
 **To see the results from my code:**
 
 ---
