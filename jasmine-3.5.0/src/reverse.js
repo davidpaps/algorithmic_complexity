@@ -132,3 +132,15 @@ class Reverse {
     this.data.push(myReverseData);
   };
 }
+
+const reverse = (array) => {
+  array.reverse();
+};
+
+const myReverse = (array) => {
+  let reversedArray = [];
+  for (let element = array.length - 1; element >= 0; element--) {
+    reversedArray.push(array[element]);
+  }
+  return reversedArray;
+};
