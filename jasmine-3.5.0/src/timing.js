@@ -11,6 +11,7 @@ class Timing {
       {
         let array = this._createArray(elements);
         this._shuffleArray(array);
+        this._duplicateArray(array);
         let start = performance.now();
         this.algorithm(array);
         let end = performance.now();
@@ -26,12 +27,7 @@ class Timing {
 
   _createArray = (inputSize) => {
     let array = [...Array(inputSize).keys()];
-    let dupArray = [...Array(inputSize).keys()];
-    if (this.algorithm === duplicate) {
-      for (let i = 0; i < dupArray.length; i++) {
-        array.push(dupArray[i]);
-      }
-    }
+
     return array;
   };
 
@@ -40,6 +36,15 @@ class Timing {
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+  };
+
+  _duplicateArray = (array) => {
+    let dupArray = [...Array(array.length).keys()];
+    if (this.algorithm === duplicate) {
+      for (let i = 0; i < dupArray.length; i++) {
+        array.push(dupArray[i]);
       }
     }
   };
@@ -90,4 +95,11 @@ const duplicate = (array) => {
     }
   });
   return duplicates;
+};
+
+const myDuplicate = (array) => {
+  // let duplicateArray = array.filter(
+  //   (element, index, array) => array.indexOf(element) !== index
+  // );
+  // return duplicateArray;
 };
