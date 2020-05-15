@@ -77,9 +77,17 @@ const myReverse = (array) => {
 };
 
 const duplicate = (array) => {
-  return array;
-  // let duplicateArray = array.filter(
-  //   (element, index, array) => array.indexOf(element) !== index
-  // );
-  // return duplicateArray;
+  let counter = {};
+  let duplicates = [];
+  array.forEach((element) => {
+    if (counter[element] === undefined) {
+      counter[element] = 1;
+    } else {
+      counter[element] += 1;
+      if (counter[element] === 2) {
+        duplicates.push(element);
+      }
+    }
+  });
+  return duplicates;
 };
