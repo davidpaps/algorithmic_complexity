@@ -78,18 +78,8 @@ const myReverse = (array) => {
 
 const duplicate = (array) => {
   return array;
+  // let duplicateArray = array.filter(
+  //   (element, index, array) => array.indexOf(element) !== index
+  // );
+  // return duplicateArray;
 };
-
-// if (this.algorithm === duplicate) {
-//   // let dupArray = [...Array(inputSize).keys()];
-//   for (let element = 0; (element = dupArray.length); element++) {
-//     array.push(dupArray[element]);
-//   }
-// }
-
-// const duplicate = (array) => {
-//   let duplicateArray = array.filter(
-//     (element, index, array) => array.indexOf(element) !== index
-//   );
-//   return duplicateArray;
-// };
