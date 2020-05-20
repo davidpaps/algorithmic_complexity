@@ -14,9 +14,11 @@
     <script src="src/duplicate.js"></script>
     <script src="src/last.js"></script>
     <script src="src/sort.js"></script>
+    <script src="src/sortZeroOne.js"></script>
   </head>
 
   <body>
+    <canvas id="sortZeroOne" width="200" height="100"></canvas>
     <canvas id="sort" width="200" height="100"></canvas>
     <canvas id="last" width="200" height="100"></canvas>
     <canvas id="duplicate" width="200" height="100"></canvas>
@@ -26,22 +28,25 @@
   </body>
 
   <script>
-    let libraryFunctions = new LibraryFunctions();
-    libraryFunctions.renderChart(100000, 1000);
+    // let libraryFunctions = new LibraryFunctions();
+    // libraryFunctions.renderChart(100000, 1000);
 
-    let reverseFunction = new Reverse();
-    reverseFunction.renderChart(100000, 1000);
+    // let reverseFunction = new Reverse();
+    // reverseFunction.renderChart(100000, 1000);
 
-    let shuffleFunction = new Shuffle();
-    shuffleFunction.renderChart(100000, 1000);
+    // let shuffleFunction = new Shuffle();
+    // shuffleFunction.renderChart(100000, 1000);
 
-    let duplicateFunction = new Duplicate();
-    duplicateFunction.renderChart(100000, 1000);
+    // let duplicateFunction = new Duplicate();
+    // duplicateFunction.renderChart(100000, 1000);
 
-    let lastFunction = new Last();
-    lastFunction.renderChart(100000, 1000);
+    // let lastFunction = new Last();
+    // lastFunction.renderChart(100000, 1000);
 
     let sortFunction = new Sort();
     sortFunction.renderChart(100000, 1000);
+
+    let sortZeroOneFunction = new SortZeroOne();
+    sortZeroOneFunction.renderChart(100000, 1000);
   </script>
 </html>

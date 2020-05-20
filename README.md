@@ -73,6 +73,10 @@ Implement your own algorithm for all elements that appear more than once in an a
 
 Implement your own algorithm for returning the last element of an aray (you cannot use `.last`).
 
+#### Sort (0's and 1's)
+
+Implement your own algorithm for sorting an array of 0's and 1's (you cannot use `.sort`).
+
 #### Sort
 
 Implement your own algorithm for sorting an array (you cannot use `.sort`).
@@ -103,4 +107,15 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
   </tr>
  </table>
 
+ <table>
+  <tr>
+     <td>sortZeroOnes()</td>
+      <td>sort()</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./public/images/sort_zero_ones.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/sort.png' width="5000"/></td>
+  </tr>
+ </table>
+ 
 ---
