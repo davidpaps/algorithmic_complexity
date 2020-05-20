@@ -107,7 +107,7 @@ class Duplicate {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingDuplicate.run(inputSize, step);
+    this.timingDuplicate.runNumbers(inputSize, step);
 
     this.timingDuplicate.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class Duplicate {
   };
 
   duplicateData = (inputSize, step) => {
-    this.timingDuplicate.run(inputSize, step);
+    this.timingDuplicate.runNumbers(inputSize, step);
     let duplicateData = [];
     this.timingDuplicate.times.forEach((iteration) => {
       duplicateData.push(iteration.time);
@@ -124,7 +124,7 @@ class Duplicate {
   };
 
   duplicateMyData = (inputSize, step) => {
-    this.timingMyDuplicate.run(inputSize, step);
+    this.timingMyDuplicate.runNumbers(inputSize, step);
     let duplicateMyData = [];
     this.timingMyDuplicate.times.forEach((iteration) => {
       duplicateMyData.push(iteration.time);

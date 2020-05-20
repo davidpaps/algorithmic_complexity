@@ -107,7 +107,7 @@ class Shuffle {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingShuffle.run(inputSize, step);
+    this.timingShuffle.runNumbers(inputSize, step);
 
     this.timingShuffle.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class Shuffle {
   };
 
   shuffleData = (inputSize, step) => {
-    this.timingShuffle.run(inputSize, step);
+    this.timingShuffle.runNumbers(inputSize, step);
     let shuffleData = [];
     this.timingShuffle.times.forEach((iteration) => {
       shuffleData.push(iteration.time);
@@ -124,7 +124,7 @@ class Shuffle {
   };
 
   myShuffleData = (inputSize, step) => {
-    this.timingMyShuffle.run(inputSize, step);
+    this.timingMyShuffle.runNumbers(inputSize, step);
     let myShuffleData = [];
     this.timingMyShuffle.times.forEach((iteration) => {
       myShuffleData.push(iteration.time);

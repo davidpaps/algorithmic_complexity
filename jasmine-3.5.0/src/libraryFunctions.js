@@ -145,7 +145,7 @@ class LibraryFunctions {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingSort.run(inputSize, step);
+    this.timingSort.runNumbers(inputSize, step);
 
     this.timingSort.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -153,7 +153,7 @@ class LibraryFunctions {
   };
 
   sortData = (inputSize, step) => {
-    this.timingSort.run(inputSize, step);
+    this.timingSort.runNumbers(inputSize, step);
     let sortData = [];
     this.timingSort.times.forEach((iteration) => {
       sortData.push(iteration.time);
@@ -162,7 +162,7 @@ class LibraryFunctions {
   };
 
   reverseData = (inputSize, step) => {
-    this.timingReverse.run(inputSize, step);
+    this.timingReverse.runNumbers(inputSize, step);
     let reverseData = [];
     this.timingReverse.times.forEach((iteration) => {
       reverseData.push(iteration.time);
@@ -171,7 +171,7 @@ class LibraryFunctions {
   };
 
   lastData = (inputSize, step) => {
-    this.timingLast.run(inputSize, step);
+    this.timingLast.runNumbers(inputSize, step);
     let lastData = [];
     this.timingLast.times.forEach((iteration) => {
       lastData.push(iteration.time);
@@ -180,7 +180,7 @@ class LibraryFunctions {
   };
 
   shuffleData = (inputSize, step) => {
-    this.timingShuffle.run(inputSize, step);
+    this.timingShuffle.runNumbers(inputSize, step);
     let shuffleData = [];
     this.timingShuffle.times.forEach((iteration) => {
       shuffleData.push(iteration.time);

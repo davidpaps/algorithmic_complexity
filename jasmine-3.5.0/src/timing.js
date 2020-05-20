@@ -6,7 +6,7 @@ class Timing {
     this.times = [];
   }
 
-  run = (inputSize, step) => {
+  runNumbers = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createArray(elements);

@@ -107,7 +107,7 @@ class Reverse {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingReverse.run(inputSize, step);
+    this.timingReverse.runNumbers(inputSize, step);
 
     this.timingReverse.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class Reverse {
   };
 
   reverseData = (inputSize, step) => {
-    this.timingReverse.run(inputSize, step);
+    this.timingReverse.runNumbers(inputSize, step);
     let reverseData = [];
     this.timingReverse.times.forEach((iteration) => {
       reverseData.push(iteration.time);
@@ -124,7 +124,7 @@ class Reverse {
   };
 
   myReverseData = (inputSize, step) => {
-    this.timingMyReverse.run(inputSize, step);
+    this.timingMyReverse.runNumbers(inputSize, step);
     let myReverseData = [];
     this.timingMyReverse.times.forEach((iteration) => {
       myReverseData.push(iteration.time);

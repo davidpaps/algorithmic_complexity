@@ -107,7 +107,7 @@ class Sort {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingSort.run(inputSize, step);
+    this.timingSort.runNumbers(inputSize, step);
 
     this.timingSort.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class Sort {
   };
 
   sortData = (inputSize, step) => {
-    this.timingSort.run(inputSize, step);
+    this.timingSort.runNumbers(inputSize, step);
     let sortData = [];
     this.timingSort.times.forEach((iteration) => {
       sortData.push(iteration.time);
@@ -124,7 +124,7 @@ class Sort {
   };
 
   mySortData = (inputSize, step) => {
-    this.timingMySort.run(inputSize, step);
+    this.timingMySort.runNumbers(inputSize, step);
     let mySortData = [];
     this.timingMySort.times.forEach((iteration) => {
       mySortData.push(iteration.time);

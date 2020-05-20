@@ -107,7 +107,7 @@ class Last {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingLast.run(inputSize, step);
+    this.timingLast.runNumbers(inputSize, step);
 
     this.timingLast.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class Last {
   };
 
   lastData = (inputSize, step) => {
-    this.timingLast.run(inputSize, step);
+    this.timingLast.runNumbers(inputSize, step);
     let lastData = [];
     this.timingLast.times.forEach((iteration) => {
       lastData.push(iteration.time);
@@ -124,7 +124,7 @@ class Last {
   };
 
   myLastData = (inputSize, step) => {
-    this.timingMyLast.run(inputSize, step);
+    this.timingMyLast.runNumbers(inputSize, step);
     let myLastData = [];
     this.timingMyLast.times.forEach((iteration) => {
       myLastData.push(iteration.time);
