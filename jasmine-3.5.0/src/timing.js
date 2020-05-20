@@ -9,7 +9,7 @@ class Timing {
   runNumbers = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
-        let array = this._createArray(elements);
+        let array = this._createNumberArray(elements);
         this._shuffleArray(array);
         this._duplicateArray(array);
         let start = performance.now();
@@ -21,7 +21,36 @@ class Timing {
     }
   };
 
-  _createArray = (inputSize) => {
+  runZeroOnes = (inputSize, step) => {
+    for (let elements = 0; elements < inputSize; elements += step) {
+      {
+        let array = this._createZeroOneArray(elements);
+        let start = performance.now();
+        this.algorithm(array);
+        let end = performance.now();
+        let time = end - start;
+        this._addTimes(this.times, elements, time);
+      }
+    }
+  };
+
+  _createZeroOneArray = (inputSize) => {
+    let zero = Array(inputSize / 2).fill(0);
+    let one = Array(inputSize / 2).fill(1);
+    let array = [];
+
+    for (let i = 0; i < zero.length; i++) {
+      array.push(zero[i]);
+    }
+
+    for (let i = 0; i < one.length; i++) {
+      array.push(one[i]);
+    }
+
+    return array;
+  };
+
+  _createNumberArray = (inputSize) => {
     return [...Array(inputSize).keys()];
   };
 
