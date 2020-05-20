@@ -138,14 +138,10 @@ const sort = (array) => {
 };
 
 const mySort = (array) => {
-  //   for (let i = 0; i < array.length; i++) {
-  //     for (let j = i + 1; j < array.length; j++) {
-  //       if (array[i] > array[j]) {
-  //         let swap = array[i];
-  //         array[i] = array[j];
-  //         array[j] = swap;
-  //       }
-  //     }
-  //   }
-  return array;
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let k = array[i];
+    array[i] = array[j];
+    array[j] = k;
+  }
 };
