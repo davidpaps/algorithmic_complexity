@@ -67,7 +67,7 @@ class SortZeroOne {
               },
               scaleLabel: {
                 display: true,
-                labelString: "Number of 0's + 1's in Array",
+                labelString: "Number of elements in Array",
                 fontSize: 16,
                 fontStyle: "bold",
               },
@@ -114,7 +114,7 @@ class SortZeroOne {
     });
   };
 
-  sortData = (inputSize, step) => {
+  sortZeroOneData = (inputSize, step) => {
     this.timingSortZeroOne.runZeroOne(inputSize, step);
     let sortZeroOneData = [];
     this.timingSortZeroOne.times.forEach((iteration) => {
@@ -123,7 +123,7 @@ class SortZeroOne {
     this.data.push(sortZeroOneData);
   };
 
-  mySortData = (inputSize, step) => {
+  mySortZeroOneData = (inputSize, step) => {
     this.timingMySortZeroOne.runZeroOne(inputSize, step);
     let mySortZeroOneData = [];
     this.timingMySortZeroOne.times.forEach((iteration) => {

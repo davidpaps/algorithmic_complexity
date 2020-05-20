@@ -10,7 +10,9 @@ class Timing {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createNumberArray(elements);
-        this._shuffleArray(array);
+        if (this.algorithm === sort || this.algorithm === mySort) {
+          this._shuffleArray(array);
+        }
         this._duplicateArray(array);
         let start = performance.now();
         this.algorithm(array);
@@ -21,10 +23,11 @@ class Timing {
     }
   };
 
-  runZeroOnes = (inputSize, step) => {
+  runZeroOne = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createZeroOneArray(elements);
+        this._shuffleArray(array);
         let start = performance.now();
         this.algorithm(array);
         let end = performance.now();
@@ -55,11 +58,9 @@ class Timing {
   };
 
   _shuffleArray = (array) => {
-    if (this.algorithm === sort || this.algorithm === mySort) {
-      for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
   };
 
