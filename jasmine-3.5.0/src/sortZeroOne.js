@@ -134,9 +134,27 @@ class SortZeroOne {
 }
 
 const sortZeroOne = (array) => {
-  return array;
+  let sort = [];
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] === 0 ? sort.unshift(array[i]) : sort.push(array[i]);
+  }
+  return sort;
 };
 
 const mySortZeroOne = (array) => {
-  return array;
+  let sort = [];
+  let one = [];
+  let zero = [];
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] === 0 ? zero.push(array[i]) : one.push(array[i]);
+  }
+  for (let i = 0; i < zero.length; i++) {
+    sort.push(zero[i]);
+  }
+  for (let i = 0; i < one.length; i++) {
+    sort.push(one[i]);
+  }
+  return sort;
 };
