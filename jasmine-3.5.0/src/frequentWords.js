@@ -134,9 +134,30 @@ class FrequentWords {
 }
 
 const frequentWords = (array) => {
+  // let duplicate = array.filter(
+  //   (item, index) => array.lastIndexOf(item) != index
+  // );
+  // console.log(duplicate);
   return array;
 };
 
 const myFrequentWords = (array) => {
-  return array;
+  let counting = {};
+
+  array.forEach(function (string) {
+    counting[string] = (counting[string] || 0) + 1;
+  });
+
+  if (Object.keys(counting).length !== array.length) {
+    let duplicate = [];
+    let string;
+    for (string in counting) {
+      if (counting.hasOwnProperty(string)) {
+        if (counting[string] > 1) {
+          duplicate.push(string);
+        }
+      }
+    }
+    return duplicate;
+  }
 };
