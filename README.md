@@ -81,6 +81,10 @@ Implement your own algorithm for sorting an array of 0's and 1's (you cannot use
 
 Implement your own algorithm for sorting an array (you cannot use `.sort`).
 
+#### Most Frequent Words
+
+Given a list of words, find which are the two most common words.
+
 **To see the results from my code:**
 
 Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph for each of the functions detailed above. The legend's can be clicked to add or remove a function from the graph:
