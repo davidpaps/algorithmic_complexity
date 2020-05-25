@@ -37,6 +37,25 @@ class Timing {
     }
   };
 
+  runWords = (inputSize, step) => {
+    for (let elements = 0; elements < inputSize; elements += step) {
+      {
+        let array = this._createWordArray(elements);
+        let start = performance.now();
+        this.algorithm(array);
+        let end = performance.now();
+        let time = end - start;
+        this._addTimes(this.times, elements, time);
+      }
+    }
+  };
+
+  _createWordArray = (inputSize) => {
+    let words = ["a", "b", "c", "a", "d", "e", "b", "f", "g", "b"];
+    let array = Array(inputSize).fill(words).flat();
+    return array;
+  };
+
   _createZeroOneArray = (inputSize) => {
     let zero = Array(inputSize / 2).fill(0);
     let one = Array(inputSize / 2).fill(1);

@@ -107,7 +107,7 @@ class FrequentWords {
   };
 
   generateLabels = (inputSize, step) => {
-    this.timingFrequentWords.runNumbers(inputSize, step);
+    this.timingFrequentWords.runWords(inputSize, step);
 
     this.timingFrequentWords.times.forEach((iteration) => {
       this.labels.push(iteration.inputSize);
@@ -115,7 +115,7 @@ class FrequentWords {
   };
 
   frequentWordData = (inputSize, step) => {
-    this.timingFrequentWords.runNumbers(inputSize, step);
+    this.timingFrequentWords.runWords(inputSize, step);
     let frequentWordData = [];
     this.timingFrequentWords.times.forEach((iteration) => {
       frequentWordData.push(iteration.time);
@@ -124,7 +124,7 @@ class FrequentWords {
   };
 
   myFrequentWordData = (inputSize, step) => {
-    this.timingMyFrequentWords.runNumbers(inputSize, step);
+    this.timingMyFrequentWords.runWords(inputSize, step);
     let myFrequentWordData = [];
     this.timingMyFrequentWords.times.forEach((iteration) => {
       myFrequentWordData.push(iteration.time);
