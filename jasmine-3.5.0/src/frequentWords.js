@@ -1,7 +1,9 @@
+"use strict";
+
 class FrequentWords {
   constructor() {
     this.timingFrequentWords = new Timing(frequentWords);
-    this.timingMyFrequentWords = new Timing(myfrequentWords);
+    this.timingMyFrequentWords = new Timing(myFrequentWords);
     this.data = [];
     this.labels = [];
   }
