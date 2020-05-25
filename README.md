@@ -85,6 +85,10 @@ Implement your own algorithm for sorting an array (you cannot use `.sort`).
 
 Given a list of words, find which are the two most common words.
 
+#### Fibonacci
+
+Create a function that takes a number N and returns an array of the first N numbers in the Fibonacci sequence.
+
 **To see the results from my code:**
 
 Right click on the `Index.html` file and select `Copy Path`. Paste this into the Google Chrome Web Browser. This will display a graph for each of the functions detailed above. The legend's can be clicked to add or remove a function from the graph:
@@ -119,6 +123,17 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
   <tr>
     <td valign="top"><img src='./public/images/sort_zero_ones.png' width="5000"/></td>
     <td valign="top"><img src='./public/images/sort.png' width="5000"/></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+     <td>frequentWords()</td>
+      <td>fibonacci()</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./public/images/frequent_words.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/fibonacci.png' width="5000"/></td>
   </tr>
  </table>
  
