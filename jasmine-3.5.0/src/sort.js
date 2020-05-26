@@ -3,7 +3,7 @@
 class Sort {
   constructor() {
     this.timingSort = new Timing(sort);
-    this.timingMySort = new Timing(mySort);
+    this.timingMyQuickSort = new Timing(myQuickSort);
     this.data = [];
     this.labels = [];
   }
@@ -33,7 +33,7 @@ class Sort {
             hoverBackgroundColor: "#3792cb",
           },
           {
-            label: "My sort()",
+            label: "My quickSort()",
             data: data[1],
             fill: false,
             hidden: false,
@@ -102,7 +102,7 @@ class Sort {
   renderChart = (inputSize, step) => {
     this.generateLabels(inputSize, step);
     this.sortData(inputSize, step);
-    this.mySortData(inputSize, step);
+    this.myQuickSortData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -123,25 +123,33 @@ class Sort {
     this.data.push(sortData);
   };
 
-  mySortData = (inputSize, step) => {
-    this.timingMySort.runNumbers(inputSize, step);
-    let mySortData = [];
-    this.timingMySort.times.forEach((iteration) => {
-      mySortData.push(iteration.time);
+  myQuickSortData = (inputSize, step) => {
+    this.timingMyQuickSort.runNumbers(inputSize, step);
+    let myQuickSortData = [];
+    this.timingMyQuickSort.times.forEach((iteration) => {
+      myQuickSortData.push(iteration.time);
     });
-    this.data.push(mySortData);
+    this.data.push(myQuickSortData);
   };
 }
 
 const sort = (array) => {
-  array.sort();
+  array.sort((a, b) => a - b);
 };
 
-const mySort = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * i);
-    let k = array[i];
-    array[i] = array[j];
-    array[j] = k;
+const myQuickSort = (array) => {
+  if (array.length <= 1) {
+    return array;
   }
+
+  let pivot = array[0];
+
+  let low = [];
+  let high = [];
+
+  for (let i = 1; i < array.length; i++) {
+    array[i] < pivot ? low.push(array[i]) : high.push(array[i]);
+  }
+
+  return myQuickSort(low).concat(pivot, myQuickSort(high));
 };

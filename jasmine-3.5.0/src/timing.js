@@ -10,7 +10,7 @@ class Timing {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
         let array = this._createNumberArray(elements);
-        if (this.algorithm === sort || this.algorithm === mySort) {
+        if (this.algorithm === sort || this.algorithm === myQuickSort) {
           this._shuffleArray(array);
         }
         this._duplicateArray(array);
