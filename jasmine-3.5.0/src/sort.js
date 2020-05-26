@@ -6,6 +6,7 @@ class Sort {
     this.timingMyQuickSort = new Timing(myQuickSort);
     this.timingMyMergeSort = new Timing(myMergeSort);
     this.timingMySelectionSort = new Timing(mySelectionSort);
+    this.timingMyInsertionSort = new Timing(myInsertionSort);
     this.data = [];
     this.labels = [];
   }
@@ -56,34 +57,51 @@ class Sort {
             data: data[2],
             fill: false,
             hidden: false,
-            backgroundColor: "#E5E500",
-            borderColor: "#E5E500",
+            backgroundColor: "#FFFF00",
+            borderColor: "#FFFF00",
             borderWidth: 2,
-            pointBackgroundColor: "#E5E500",
+            pointBackgroundColor: "#FFFF00",
             pointBorderColor: "#000000",
             pointBorderWidth: 0.5,
             pointStyle: "rectRounded",
             pointRadius: 3,
             pointHitRadius: 4,
             pointHoverRadius: 5,
-            hoverBackgroundColor: "#E5E500",
+            hoverBackgroundColor: "#FFFF00",
           },
           {
             label: "My selectionSort()",
             data: data[3],
             fill: false,
             hidden: false,
-            backgroundColor: "#990000",
-            borderColor: "#990000",
+            backgroundColor: "#FF0000",
+            borderColor: "#FF0000",
             borderWidth: 2,
-            pointBackgroundColor: "#990000",
+            pointBackgroundColor: "#FF0000",
             pointBorderColor: "#000000",
             pointBorderWidth: 0.5,
             pointStyle: "rectRounded",
             pointRadius: 3,
             pointHitRadius: 4,
             pointHoverRadius: 5,
-            hoverBackgroundColor: "#990000",
+            hoverBackgroundColor: "#FF0000",
+          },
+          {
+            label: "My insertionSort()",
+            data: data[4],
+            fill: false,
+            hidden: false,
+            backgroundColor: "#9370DB",
+            borderColor: "#9370DB",
+            borderWidth: 2,
+            pointBackgroundColor: "#9370DB",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#9370DB",
           },
         ],
       },
@@ -141,6 +159,7 @@ class Sort {
     this.myQuickSortData(inputSize, step);
     this.myMergeSortData(inputSize, step);
     this.mySelectionSortData(inputSize, step);
+    this.myInsertionSortData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -187,6 +206,15 @@ class Sort {
     });
     this.data.push(mySelectionSortData);
   };
+
+  myInsertionSortData = (inputSize, step) => {
+    this.timingMyInsertionSort.runNumbers(inputSize, step);
+    let myInsertionSortData = [];
+    this.timingMyInsertionSort.times.forEach((iteration) => {
+      myInsertionSortData.push(iteration.time);
+    });
+    this.data.push(myInsertionSortData);
+  };
 }
 
 const sort = (array) => {
@@ -211,7 +239,23 @@ const myQuickSort = (array) => {
 };
 
 const myMergeSort = (array) => {
-  array.sort((a, b) => a - b);
+  if (array.length < 2) return array;
+  let mid = Math.floor(array.length / 2);
+  let sortedLeftArray = myMergeSort(array.slice(0, mid));
+  let sortedRightArray = myMergeSort(array.slice(mid, array.length));
+  return merge(sortedLeftArray, sortedRightArray);
+
+  function merge(left, right) {
+    let result = [];
+    while (left.length && right.length) {
+      if (left[0] < right[0]) {
+        result.push(left.shift());
+      } else {
+        result.push(right.shift());
+      }
+    }
+    return [...result, ...left, ...right];
+  }
 };
 
 const mySelectionSort = (array) => {
@@ -227,6 +271,19 @@ const mySelectionSort = (array) => {
       array[i] = array[min];
       array[min] = temp;
     }
+  }
+  return array;
+};
+
+const myInsertionSort = (array) => {
+  for (let i = 1; i < array.length; i++) {
+    let key = array[i];
+    let j = i - 1;
+    while (j >= 0 && array[j] > key) {
+      array[j + 1] = array[j];
+      j = j - 1;
+    }
+    array[j + 1] = key;
   }
   return array;
 };
