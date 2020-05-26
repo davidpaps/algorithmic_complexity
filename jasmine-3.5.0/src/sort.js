@@ -4,6 +4,8 @@ class Sort {
   constructor() {
     this.timingSort = new Timing(sort);
     this.timingMyQuickSort = new Timing(myQuickSort);
+    this.timingMyMergeSort = new Timing(myMergeSort);
+    this.timingMySelectionSort = new Timing(mySelectionSort);
     this.data = [];
     this.labels = [];
   }
@@ -48,6 +50,40 @@ class Sort {
             pointHitRadius: 4,
             pointHoverRadius: 5,
             hoverBackgroundColor: "#629632",
+          },
+          {
+            label: "My mergeSort()",
+            data: data[2],
+            fill: false,
+            hidden: false,
+            backgroundColor: "#E5E500",
+            borderColor: "#E5E500",
+            borderWidth: 2,
+            pointBackgroundColor: "#E5E500",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#E5E500",
+          },
+          {
+            label: "My selectionSort()",
+            data: data[3],
+            fill: false,
+            hidden: false,
+            backgroundColor: "#990000",
+            borderColor: "#990000",
+            borderWidth: 2,
+            pointBackgroundColor: "#990000",
+            pointBorderColor: "#000000",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 3,
+            pointHitRadius: 4,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#990000",
           },
         ],
       },
@@ -103,6 +139,8 @@ class Sort {
     this.generateLabels(inputSize, step);
     this.sortData(inputSize, step);
     this.myQuickSortData(inputSize, step);
+    this.myMergeSortData(inputSize, step);
+    this.mySelectionSortData(inputSize, step);
     this.generateChart(this.labels, this.data);
   };
 
@@ -131,6 +169,24 @@ class Sort {
     });
     this.data.push(myQuickSortData);
   };
+
+  myMergeSortData = (inputSize, step) => {
+    this.timingMyMergeSort.runNumbers(inputSize, step);
+    let myMergeSortData = [];
+    this.timingMyMergeSort.times.forEach((iteration) => {
+      myMergeSortData.push(iteration.time);
+    });
+    this.data.push(myMergeSortData);
+  };
+
+  mySelectionSortData = (inputSize, step) => {
+    this.timingMySelectionSort.runNumbers(inputSize, step);
+    let mySelectionSortData = [];
+    this.timingMySelectionSort.times.forEach((iteration) => {
+      mySelectionSortData.push(iteration.time);
+    });
+    this.data.push(mySelectionSortData);
+  };
 }
 
 const sort = (array) => {
@@ -152,4 +208,25 @@ const myQuickSort = (array) => {
   }
 
   return myQuickSort(low).concat(pivot, myQuickSort(high));
+};
+
+const myMergeSort = (array) => {
+  array.sort((a, b) => a - b);
+};
+
+const mySelectionSort = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[min] > array[j]) {
+        min = j;
+      }
+    }
+    if (min !== i) {
+      let temp = array[i];
+      array[i] = array[min];
+      array[min] = temp;
+    }
+  }
+  return array;
 };
