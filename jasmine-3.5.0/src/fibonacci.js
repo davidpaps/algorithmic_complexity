@@ -133,8 +133,12 @@ class Fibonacci {
   };
 }
 
-const fibonacci = (array) => {
-  return array;
+const fibonacci = (number) => {
+  let fibonacciArray = [0, 1];
+  for (let i = 2; i < number; i++) {
+    fibonacciArray.push(fibonacciArray[i - 2] + fibonacciArray[i - 1]);
+  }
+  return fibonacciArray;
 };
 
 const myFibonacci = (number) => {
