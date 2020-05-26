@@ -3,7 +3,7 @@
 class Fibonacci {
   constructor() {
     this.timingFibonacci = new Timing(fibonacci);
-    this.timingMyibonacci = new Timing(myFibonacci);
+    this.timingMyFibonacci = new Timing(myFibonacci);
     this.data = [];
     this.labels = [];
   }
@@ -114,8 +114,8 @@ class Fibonacci {
     });
   };
 
-  FibonacciData = (inputSize, step) => {
-    this.timingFibonacci.runWords(inputSize, step);
+  fibonacciData = (inputSize, step) => {
+    this.timingFibonacci.runFibonacci(inputSize, step);
     let fibonacciData = [];
     this.timingFibonacci.times.forEach((iteration) => {
       fibonacciData.push(iteration.time);
@@ -124,7 +124,7 @@ class Fibonacci {
   };
 
   myFibonacciData = (inputSize, step) => {
-    this.timingMyFibonacci.runWords(inputSize, step);
+    this.timingMyFibonacci.runFibonacci(inputSize, step);
     let myFibonacciData = [];
     this.timingMyFibonacci.times.forEach((iteration) => {
       myFibonacciData.push(iteration.time);
@@ -137,6 +137,24 @@ const fibonacci = (array) => {
   return array;
 };
 
-const myFibonacci = (array) => {
-  return array;
+const myFibonacci = (number) => {
+  let a = 0;
+  let b = 1;
+  let fibonacciArray = [];
+
+  if (number >= 1) {
+    fibonacciArray.push(a);
+  }
+  if (number >= 2) {
+    fibonacciArray.push(b);
+  }
+  if (number >= 3) {
+    for (let i = 0; i < number - 2; i++) {
+      let c = a + b;
+      a = b;
+      b = c;
+      fibonacciArray.push(c);
+    }
+  }
+  return fibonacciArray;
 };

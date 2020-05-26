@@ -16,9 +16,11 @@
     <script src="src/sort.js"></script>
     <script src="src/sortZeroOne.js"></script>
     <script src="src/frequentWords.js"></script>
+    <script src="src/fibonacci.js"></script>
   </head>
 
   <body>
+    <canvas id="fibonacci" width="200" height="100"></canvas>
     <canvas id="frequent" width="200" height="100"></canvas>
     <canvas id="sortZeroOne" width="200" height="100"></canvas>
     <canvas id="sort" width="200" height="100"></canvas>
@@ -51,7 +53,10 @@
     // let sortZeroOneFunction = new SortZeroOne();
     // sortZeroOneFunction.renderChart(100000, 1000);
 
-    let frequentWordsFunction = new FrequentWords();
-    frequentWordsFunction.renderChart(100000, 1000);
+    // let frequentWordsFunction = new FrequentWords();
+    // frequentWordsFunction.renderChart(100000, 1000);
+
+    let fibonacciFunction = new Fibonacci();
+    fibonacciFunction.renderChart(100, 10);
   </script>
 </html>

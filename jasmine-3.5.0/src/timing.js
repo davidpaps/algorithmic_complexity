@@ -53,7 +53,7 @@ class Timing {
   runFibonacci = (inputSize, step) => {
     for (let elements = 0; elements < inputSize; elements += step) {
       {
-        let array = this._createFibonacciArray(elements);
+        let array = elements;
         let start = performance.now();
         this.algorithm(array);
         let end = performance.now();
@@ -61,10 +61,6 @@ class Timing {
         this._addTimes(this.times, elements, time);
       }
     }
-  };
-
-  _createFibonacciArray = (inputSize) => {
-    return [inputSize];
   };
 
   _createWordArray = (inputSize) => {
