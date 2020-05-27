@@ -243,9 +243,9 @@ const myMergeSort = (array) => {
   let mid = Math.floor(array.length / 2);
   let sortedLeftArray = myMergeSort(array.slice(0, mid));
   let sortedRightArray = myMergeSort(array.slice(mid, array.length));
-  return merge(sortedLeftArray, sortedRightArray);
+  return mergeArrays(sortedLeftArray, sortedRightArray);
 
-  function merge(left, right) {
+  function mergeArrays(left, right) {
     let result = [];
     while (left.length && right.length) {
       if (left[0] < right[0]) {
