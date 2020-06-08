@@ -109,4 +109,29 @@ describe("Timing", function () {
       ]);
     });
   });
+
+  describe("_shuffleArray", function () {
+    it("shuffles an array", function () {
+      let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      expect(timing._shuffleArray(array)).not.toEqual([
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+      ]);
+    });
+  });
+
+  describe("_duplicateArray", function () {
+    it("duplicates an array", function () {
+      let t = new Timing(duplicate);
+      let array = [0, 1, 2, 3];
+      expect(t._duplicateArray(array)).toEqual([0, 1, 2, 3, 0, 1, 2, 3]);
+    });
+  });
 });
