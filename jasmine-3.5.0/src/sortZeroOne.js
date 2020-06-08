@@ -149,6 +149,5 @@ const mySortZeroOne = (array) => {
     number === 1 ? one.push(number) : zero.push(number);
   });
   let sort = zero.concat(one);
-  console.log(sort);
   return sort;
 };

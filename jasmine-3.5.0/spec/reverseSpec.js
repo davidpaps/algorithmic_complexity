@@ -1,6 +1,6 @@
 "use strict";
 
-describe("reverse", function () {
+describe("Reverse", function () {
   let array;
 
   beforeEach(function () {
