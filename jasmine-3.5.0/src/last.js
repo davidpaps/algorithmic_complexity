@@ -134,9 +134,9 @@ class Last {
 }
 
 const last = (array) => {
-  array.slice(-1)[0];
+  return array.slice(-1)[0];
 };
 
 const myLast = (array) => {
-  array[array.length - 1];
+  return array[array.length - 1];
 };
