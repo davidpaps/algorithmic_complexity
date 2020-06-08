@@ -7,12 +7,12 @@ describe("Timing", function () {
     timing = new Timing(reverse);
   });
 
-  describe("run", function () {
-    it("to take in inputs and create an array with that length", function () {
-      timing.run(1000, 100);
+  describe("runNumbers", function () {
+    it("to take in inputs and create an array with that length of numbers", function () {
+      timing.runNumbers(1000, 100);
       expect(timing.times.length).toEqual(10);
       expect(timing.times[0].inputSize).toEqual(0);
-      expect(timing.times[0].time).toEqual(0);
+      expect(timing.times[0].time.toFixed(0)).toEqual("0");
     });
   });
 });

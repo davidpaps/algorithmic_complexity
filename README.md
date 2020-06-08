@@ -1,6 +1,6 @@
 # Algorithmic Complexity
 
-Makers Wokshop - How programs interact with memory, and how to use that to make programmes faster. My workings are writtin in Javascript, but this can be completed in any language.
+How programs interact with memory, and how to use that to make programmes faster. My workings are writtin in Javascript, but this can be completed in any language.
 
 ---
 
@@ -12,16 +12,14 @@ To run the Jasmine test suite, right click on the `SpecRunner.html` file and sel
 
 ---
 
-## Chapter 1 Timing Code
-
 To start, let's look at how fast some standard library functions run. Here are four different ones you could be looking at:
 
 Last (get the last element of an array)
 Reverse (reverse the elements of an array)
 Shuffle (shuffle the elements of an array)
-Sort(sort the elements in an array)
+Sort (sort the elements in an array)
 
-(if you are generating an array from a range, don't forget to shuffle it first to not bias the results)
+(If you are generating an array from a range, don't forget to shuffle it first to not bias the results)
 
 ### The Challenges:
 
@@ -41,8 +39,6 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
 <img src='./public/images/four.png' />
 
 ---
-
-# Chapter 2: Building Your Own Algorithms
 
 Now, let's look at efficiency for our own algorithms.
 
