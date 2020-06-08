@@ -79,7 +79,7 @@ Implement your own algorithm for sorting an array (you cannot use `.sort`).
 
 #### Most Frequent Words
 
-Given a list of words, find which are the two most common words.
+Given a list of words, find which are repeated.
 
 #### Fibonacci
 
