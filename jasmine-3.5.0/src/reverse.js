@@ -134,7 +134,7 @@ class Reverse {
 }
 
 const reverse = (array) => {
-  array.reverse();
+  return array.reverse();
 };
 
 const myReverse = (array) => {
