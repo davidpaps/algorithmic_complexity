@@ -8,7 +8,7 @@ describe("Timing", function () {
   });
 
   describe("runNumbers", function () {
-    it("to take in inputs and create an array with that length of numbers", function () {
+    it("runs the timing framework for algorithms using number arrays", function () {
       timing.runNumbers(1000, 100);
       expect(timing.times.length).toEqual(10);
       expect(timing.times[0].inputSize).toEqual(0);
@@ -17,7 +17,7 @@ describe("Timing", function () {
   });
 
   describe("runZeroOne", function () {
-    it("to take in inputs and create an array with that length of 0's and 1's", function () {
+    it("runs the timing framework for Fibonacci algorithms", function () {
       timing.runZeroOne(1000, 100);
       expect(timing.times.length).toEqual(10);
       expect(timing.times[0].inputSize).toEqual(0);
@@ -26,7 +26,7 @@ describe("Timing", function () {
   });
 
   describe("runWords", function () {
-    it("to take in inputs and create an array with that length of words", function () {
+    it("runs the timing framework for Fibonacci algorithms", function () {
       timing.runWords(1000, 100);
       expect(timing.times.length).toEqual(10);
       expect(timing.times[0].inputSize).toEqual(0);
@@ -35,7 +35,7 @@ describe("Timing", function () {
   });
 
   describe("runFibonacci", function () {
-    it("to take in inputs and create an array with that length of words", function () {
+    it("runs the timing framework for Fibonacci algorithms", function () {
       let t = new Timing(fibonacci);
       t.runFibonacci(1000, 100);
       expect(t.times.length).toEqual(10);
@@ -88,6 +88,24 @@ describe("Timing", function () {
         1,
         1,
         1,
+      ]);
+    });
+  });
+
+  describe("_createNumberArray", function () {
+    it("creates a number array with a length of 10", function () {
+      expect(timing._createNumberArray(10).length).toEqual(10);
+      expect(timing._createNumberArray(10)).toEqual([
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
       ]);
     });
   });
