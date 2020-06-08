@@ -218,7 +218,7 @@ class Sort {
 }
 
 const sort = (array) => {
-  array.sort((a, b) => a - b);
+  return array.sort((a, b) => a - b);
 };
 
 const myQuickSort = (array) => {
