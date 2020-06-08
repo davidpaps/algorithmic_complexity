@@ -43,4 +43,52 @@ describe("Timing", function () {
       expect(t.times[0].time.toFixed(0)).toEqual("0");
     });
   });
+
+  describe("_createWordArray", function () {
+    it("creates a word array with a length of 20", function () {
+      expect(timing._createWordArray(2).length).toEqual(20);
+      expect(timing._createWordArray(2)).toEqual([
+        "a",
+        "b",
+        "c",
+        "a",
+        "d",
+        "e",
+        "b",
+        "f",
+        "g",
+        "b",
+        "a",
+        "b",
+        "c",
+        "a",
+        "d",
+        "e",
+        "b",
+        "f",
+        "g",
+        "b",
+      ]);
+    });
+  });
+
+  describe("_createZeroOneArray", function () {
+    it("creates a 0/1 array with a length of 12", function () {
+      expect(timing._createZeroOneArray(12).length).toEqual(12);
+      expect(timing._createZeroOneArray(12)).toEqual([
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+      ]);
+    });
+  });
 });

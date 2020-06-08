@@ -55,11 +55,11 @@ Here is a list of algorithms for you to implement:
 
 #### Shuffle
 
-Implement your own algorithm for shuffling (you cannot use `.shuffle`).
+Implement your own algorithm for shuffling the elements in an array (you cannot use `.shuffle`).
 
 #### Reverse
 
-Implement your own algorithm for reversing an array (you cannot use `.reverse`).
+Implement your own algorithm for reversing elements in an array (you cannot use `.reverse`).
 
 #### Find Duplicates
 
@@ -67,7 +67,7 @@ Implement your own algorithm to remove all elements that appear more than once i
 
 #### Last
 
-Implement your own algorithm for returning the last element of an aray (you cannot use `.last`).
+Implement your own algorithm for returning the last element of an array (you cannot use `.last`).
 
 #### Sort (0's and 1's)
 
@@ -75,11 +75,11 @@ Implement your own algorithm for sorting an array of 0's and 1's (you cannot use
 
 #### Sort
 
-Implement your own algorithm for sorting an array (you cannot use `.sort`).
+Implement your own algorithm for sorting an array in ascending order (you cannot use `.sort`).
 
 #### Most Frequent Words
 
-Given a list of words, find which are repeated.
+Given a list of words, find which words are repeated.
 
 #### Fibonacci
 
