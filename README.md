@@ -63,7 +63,7 @@ Implement your own algorithm for reversing an array (you cannot use `.reverse`).
 
 #### Find Duplicates
 
-Implement your own algorithm for all elements that appear more than once in an array (you cannot use `.unique`).
+Implement your own algorithm to remove all elements that appear more than once in an array (you cannot use `.unique`).
 
 #### Last
 
