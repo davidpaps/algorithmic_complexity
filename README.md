@@ -58,7 +58,7 @@ Here is a list of algorithms for you to implement:
 
 #### Find Duplicates
 
-- - Implement your own algorithm to remove all elements that appear more than once in an array (you cannot use `.unique`).
+- Implement your own algorithm to remove all elements that appear more than once in an array (you cannot use `.unique`).
 
 #### Last
 
@@ -70,7 +70,7 @@ Here is a list of algorithms for you to implement:
 
 #### Sort
 
-- Implement your own algorithm for sorting an array in ascending order (you cannot use `.sort`).
+- Implement your own algorithms (`Quick`, `Selection`, `Merge` and `Insertion` sort) for sorting an array in ascending order (you cannot use `.sort`).
 
 #### Most Frequent Words
 
@@ -90,8 +90,8 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
       <td>reverse()</td>
   </tr>
   <tr>
-    <td valign="top"><img src='./public/images/shuffle_comparison.png' width="5000"/></td>
-    <td valign="top"><img src='./public/images/reverse_comparison.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/shuffle.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/reverse.png' width="5000"/></td>
   </tr>
  </table>
 
@@ -101,8 +101,8 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
       <td>last()</td>
   </tr>
   <tr>
-    <td valign="top"><img src='./public/images/duplicate_comparison.png' width="5000"/></td>
-    <td valign="top"><img src='./public/images/last_comparison.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/duplicate.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/last.png' width="5000"/></td>
   </tr>
  </table>
 
@@ -112,7 +112,7 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
       <td>sort()</td>
   </tr>
   <tr>
-    <td valign="top"><img src='./public/images/sort_zero_ones.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/sort_zero_one.png' width="5000"/></td>
     <td valign="top"><img src='./public/images/sort.png' width="5000"/></td>
   </tr>
  </table>
@@ -123,7 +123,7 @@ Right click on the `Index.html` file and select `Copy Path`. Paste this into the
       <td>fibonacci()</td>
   </tr>
   <tr>
-    <td valign="top"><img src='./public/images/frequent_words.png' width="5000"/></td>
+    <td valign="top"><img src='./public/images/frequent_word.png' width="5000"/></td>
     <td valign="top"><img src='./public/images/fibonacci.png' width="5000"/></td>
   </tr>
  </table>

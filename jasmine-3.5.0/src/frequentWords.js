@@ -54,7 +54,7 @@ class FrequentWords {
       options: {
         title: {
           display: true,
-          text: "Comparison of Duplicate Word Functions",
+          text: "Comparison of Frequent Word Functions",
           fontSize: 20,
           fontStyle: "bold",
         },
