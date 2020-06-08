@@ -134,4 +134,12 @@ describe("Timing", function () {
       expect(t._duplicateArray(array)).toEqual([0, 1, 2, 3, 0, 1, 2, 3]);
     });
   });
+
+  describe("_addTimes", function () {
+    it("adds the benchmark times", function () {
+      let array = [];
+      timing._addTimes(array, 10, 1);
+      expect(array[0]).toEqual({ inputSize: 10, time: 1 });
+    });
+  });
 });
