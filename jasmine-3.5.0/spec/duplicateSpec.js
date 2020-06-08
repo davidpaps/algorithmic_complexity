@@ -8,13 +8,13 @@ describe("Duplicate", function () {
   });
 
   describe("duplicate", function () {
-    it("remove duplicates from in a given array", function () {
+    it("remove duplicates from a given array", function () {
       expect(duplicate(array)).toEqual([1, 2, 3, 4, 5]);
     });
   });
 
   describe("myDuplicate", function () {
-    it("returns duplicates from in a given array", function () {
+    it("returns duplicates from a given array", function () {
       expect(myDuplicate(array)).toEqual([2, 5]);
     });
   });

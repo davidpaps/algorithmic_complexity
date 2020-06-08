@@ -17,7 +17,7 @@ describe("Timing", function () {
   });
 
   describe("runZeroOne", function () {
-    it("to take in inputs and create an array with that length of 0 and 1's", function () {
+    it("to take in inputs and create an array with that length of 0's and 1's", function () {
       timing.runZeroOne(1000, 100);
       expect(timing.times.length).toEqual(10);
       expect(timing.times[0].inputSize).toEqual(0);
