@@ -2,6 +2,8 @@
 
 How programs interact with memory, and how to use that to make programmes faster. A series of common algorithms, and the speed difference between different methods. All agorithms are tested in the Benchmarking `run` methods in `timing.js`. I then used `Chart.js` to display the differences between versions of the algorithms. You can substitute the algorithms in for your own, I have left mine at the bottom of each class, and they are plotted on each graph.
 
+For more information regarding Algorithms, Data Structures, and concepts like Big O notation, visit this [repo](https://github.com/davidpaps/algorithms_and_data_structures) to find out more.
+
 ---
 
 ### How To Run / Tests
